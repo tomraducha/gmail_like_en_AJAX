@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Emails</h1>
+
+<%= button_to "Recevoir un mail",{ action: "create" }, remote: true%>
+ 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Listes des emails</th>
+      <th scope="col">Email Selectionné</th>
+    </tr>
+  </thead>
+    <% @emails.each do |email| %>
+    <tbody id="email-<%=email.id%>">
+    <tr id="email-object"></tr>
+    <tr id="email-show"></tr>
+
+    <tr>
+      <td><%= email.object %></td>
+      <td><%= link_to "Voir mail", email_path(email.id), remote: true%></td>
+    </tr>
+  </tbody>
+    <% end %>
+</table>     
+
+<br>
+
+<%= link_to 'New Email', new_email_path %>
+

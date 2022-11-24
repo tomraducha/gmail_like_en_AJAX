@@ -1,0 +1,13 @@
+<td><%=@email.object%></td>
+<td>
+<h1 class="text-center"><%=@email.object%></h1><br>
+<p class="text-center"><%=@email.body%></p>
+<div class="column d-flex justify-content-center">
+    <div>
+        <button> Edit </button>
+    </div>
+    <div>
+        <%= button_to "Destroy", email_path(@email.id), method: "delete", remote: true%>
+    </div>
+</div>
+</td>
